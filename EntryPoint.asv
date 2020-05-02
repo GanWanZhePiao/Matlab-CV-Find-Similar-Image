@@ -32,22 +32,23 @@ end
 % Saving all images to db
 % save db_img
 
-% Select an Image
-[filename,filepath]=uigetfile({'*.jpg'},'Select and image');
-current_img = imread(strcat(filepath, filename));
+current_img = img_files{2,6};
 
 img_files_sorted = find_similar(current_img, img_files);
 
 for j = 1:5
     figure
     subplot(2,2,1);
-    imshow(current_img);
-    title('Selected Figure')
+    imshow(c);
+    title('Figure 1')
     subplot(2,2,2);
-    imshow(img_files_sorted{2,j});
-    title('Figure No.' + string(j))
+    imshow(img_files{2,8});
+    title('Figure 2')
     subplot(2,2,[3,4]);
-    showMatchedFeatures(rgb2gray(current_img),rgb2gray(img_files_sorted{2,j}),img_files_sorted{3,j},img_files_sorted{4,j});
+    showMatchedFeatures(rgb2gray(img_files{2,6}),rgb2gray(img_files{2,8}),matchedPoints1,matchedPoints2);
     legend('matched points 1','matched points 2')
-    title('Matched Points Count:' + string(img_files_sorted{5,j}));
+    title('Matched Points Count:' + string(matchedPointsCount));
 end
+[matchedPoints1, matchedPoints2, matchedPointsCount] = img_diff(img_files{2,6}, img_files{2,8});
+
+% img_diff(img_files{2,6}, img_files{2,7});

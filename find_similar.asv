@@ -1,0 +1,10 @@
+% find_similar.m
+% Find the top 1 similarist images using img_diff
+% author: hxp<hxp201406@gmail.com>
+
+function find_similiar(image, img_files)
+    for i = 1:length(img_files)
+        [matchedPoints1, matchedPoints2, matchedPointsCount] = img_diff(image, img_files{2,i});
+        
+    end
+end

@@ -3,7 +3,7 @@
 % Determine how same two images are.
 % author: hxp<hxp201406@gmail.com>
 
-function [matchedPoints1, matchedPoints2, matchedPointsCount] = img_diff (img_array_1, img_array_2)
+function result=img_diff (img_array_1, img_array_2, img_files)
     % Use the SURF local feature detector function to find the 
     % corresponding points between two images that are rotated and scaled 
     % with respect to each other.
@@ -25,22 +25,21 @@ function [matchedPoints1, matchedPoints2, matchedPointsCount] = img_diff (img_ar
     indexPairs = matchFeatures(f1,f2) ;
     matchedPoints1 = vpts1(indexPairs(:,1));
     matchedPoints2 = vpts2(indexPairs(:,2));
-    matchedPointsCount = matchedPoints1.Count;
     % Display the matching points. The data still includes several 
     % outliers, but you can see the effects of rotation and scaling on the 
     % display of matched features.
     
-%     figure
-%     subplot(2,2,1);
-%     imshow(img_array_1);
-%     title('Figure 1')
-% 
-%     subplot(2,2,2);
-%     imshow(img_array_2);
-%     title('Figure 2')
-% 
-%     subplot(2,2,[3,4]);
-%     showMatchedFeatures(I1,I2,matchedPoints1,matchedPoints2);
-%     legend('matched points 1','matched points 2')
-%     title('Matched Points Count:' + string(matchedPoints1.Count));
+    figure
+    subplot(2,2,1);
+    imshow(img_array_1);
+    title('Figure 1')
+
+    subplot(2,2,2);
+    imshow(img_array_2);
+    title('Figure 2')
+
+    subplot(2,2,[3,4]);
+    showMatchedFeatures(I1,I2,matchedPoints1,matchedPoints2);
+    legend('matched points 1','matched points 2')
+    title('Matched Points Count:' + string(matchedPoints1.Count));
 end
