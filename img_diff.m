@@ -23,12 +23,6 @@ function img_diff (img_array_1, img_array_2)
     % Display the matching points. The data still includes several 
     % outliers, but you can see the effects of rotation and scaling on the 
     % display of matched features.
-%     figure;
-%     imshow(img_array_1);
-%     figure;
-%     imshow(img_array_2);
-%     figure; showMatchedFeatures(I1,I2,matchedPoints1,matchedPoints2);
-%     legend('matched points 1','matched points 2');
     
     subplot(2,2,1);
     imshow(img_array_1);

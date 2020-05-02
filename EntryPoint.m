@@ -28,18 +28,8 @@ for k = 1 : length(files)
     base_filename = files(k).name;
     full_filename = fullfile(folder, base_filename);
     fprintf(1, 'Now reading %s\n', full_filename);
-    img_files{1,k} = full_filename; %#ok<SAGROW>
-    img_files{2,k} = imread(full_filename); %#ok<SAGROW>
-    
-%     % Extract histogram of oriented gradients (HOG) features
-%     fprintf(1, 'Now analyzing %s\n', fullFileName);
-%     [featureVector,hogVisualization] = extractHOGFeatures(imageArray);
-%     figure;
-%     imshow(imageArray);  % Display image.
-%     hold on;
-%     plot(hogVisualization);
-%     hold off;
-%     drawnow; % Force display to update immediately.
+    img_files{1,k} = full_filename;
+    img_files{2,k} = imread(full_filename);
 end
 
 % Saving all images to db
