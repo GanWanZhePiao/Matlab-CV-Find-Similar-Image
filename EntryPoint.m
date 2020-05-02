@@ -8,13 +8,13 @@
 % Note that you had better use English folder name, in order to avoid
 % encoding errors
 
-clc
-clear
+% clc
+% clear
 
 folder = './shorts/';
 
 % Check to make sure that folder actually exists.  Warn user if it doesn't.
-if ~isfolder(folder)
+if ~isdir(folder)
     errorMessage = sprintf('Error: The following folder does not exist:\n%s', folder);
     uiwait(warndlg(errorMessage));
     return;
@@ -36,3 +36,4 @@ end
 % save db_img
 
 img_diff(img_files{2,6}, img_files{2,8});
+img_diff(img_files{2,6}, img_files{2,7});

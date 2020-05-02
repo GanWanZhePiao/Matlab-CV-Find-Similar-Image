@@ -24,6 +24,7 @@ function img_diff (img_array_1, img_array_2)
     % outliers, but you can see the effects of rotation and scaling on the 
     % display of matched features.
     
+    figure
     subplot(2,2,1);
     imshow(img_array_1);
     title('Figure 1')
@@ -35,5 +36,5 @@ function img_diff (img_array_1, img_array_2)
     subplot(2,2,[3,4]);
     showMatchedFeatures(I1,I2,matchedPoints1,matchedPoints2);
     legend('matched points 1','matched points 2')
-
+    title('Match Points:' + string(matchedPoints1.Count));
 end
