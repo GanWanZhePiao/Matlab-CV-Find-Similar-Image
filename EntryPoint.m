@@ -38,7 +38,7 @@ current_img = imread(strcat(filepath, filename));
 
 img_files_sorted = find_similar(current_img, img_files);
 
-for j = 1:5
+for j = 3:10
     figure
     subplot(2,2,1);
     imshow(current_img);
